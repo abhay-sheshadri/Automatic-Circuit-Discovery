@@ -216,9 +216,9 @@ class TLACDCExperiment:
             assert len(hook.fwd_hooks) == 0, "Don't load the model with hooks *then* call this"
 
         new_graph = OrderedDict()
-        cache=OrderedDict()
+        cache = OrderedDict()
         self.model.cache_all(cache)
-        self.model(torch.arange(5)) # some random forward pass so that we can see all the hook names
+        self.model(torch.arange(1)) # some random forward pass so that we can see all the hook names
         self.model.reset_hooks()
 
         if self.verbose:
